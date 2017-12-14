@@ -1,0 +1,113 @@
+/* pages/food/food.wxss */
+
+.base {
+  width: 100%;
+  /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(12, 205, 137, 0.7))); */
+  background-color: #ff6843;
+  padding-top: 5px;
+}
+
+.item {
+  height: 130px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: #fff;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: 0px 3px 8px #ec927c;
+}
+
+.title {
+  width: 100%;
+  height: 30%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: #fafafa;
+  color: #666;
+  size: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.image {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.content {
+  width: 100%;
+  height: 70%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  font-size: 28px;
+  color: #333;
+  align-items: center;
+  margin-left: 15px;
+}
+
+/* 立即测试按钮 */
+
+.test_at_once {
+  width: 70px;
+  height: 24px;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 110, 74, 1)), to(rgba(255, 85, 55, 1)));
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0px 2px 6px #ffa08c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.row_style {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.img_go {
+  width: 8px;
+  height: 10px;
+}
+
+.text_bottom {
+  color: #fff;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.content_bottom {
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  background: #ff6843;
+}

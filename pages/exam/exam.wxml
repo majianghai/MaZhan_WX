@@ -1,0 +1,29 @@
+<view class="base" style="height:{{winHeight}}px">
+  <!-- 题 -->
+  <view class="question">
+    <view class='question_number'>
+      <view class='question_current'>1</view>
+      <view class='question_count'>/6</view>
+    </view>
+    <progress activeColor='#ff6843' backgroundColor='#999999' percent='20' stroke-width='3' style='margin-top:20px'></progress>
+
+    <view class='quetion_title'>非公募集基金应当向合格投资者募集，合格投资者累计不得超过多少人?</view>
+
+    <view class='answer' wx:for="{{array}}" bindtap='getAnswer' id='{{index}}'>
+      <image class='answer_status' src='{{item.image_path}}'></image>
+      <view>{{item.answer_des}}</view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class='index_button'>
+    <view class='index_button_item' bindtap='previousQuestion'>
+      <image style='width:20px;height:12px;margin-right:16px' src='../../images/previous.png'></image>
+      <view>上一题</view>
+    </view>
+    <view class='index_button_item' bindtap='nextQuestion'>
+      <view>下一题</view>
+      <image style='width:20px;height:12px;margin-left:16px' src='../../images/next.png'></image>
+    </view>
+  </view>
+
+</view>
