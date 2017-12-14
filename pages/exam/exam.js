@@ -8,78 +8,59 @@ Page({
   data: {
     winHeight: 0,
 
-    //   question_data:[{
-    //     question_des:"非公募集基金应当向合格投资者募集，合格投资者累计不得超过多少人?",
-    //     answer_data:[
-    //       {
-    //         answer_des: 1,
-    //         image_path: "../../images/img_no_select.png",
-    //       },
-    //       {
-    //         answer_des: 2,
-    //         image_path: "../../images/img_no_select.png",
-    //       },
-    //       {
-    //         answer_des: 3,
-    //         image_path: "../../images/img_no_select.png",
-    //       },
-    //       {
-    //         answer_des: 4,
-    //         image_path: "../../images/img_no_select.png",
-    //       },
-    //       {
-    //         answer_des: 5,
-    //         image_path: "../../images/img_no_select.png",
-    //       }
-    //     ]
-    //   },
-    //   {
-    //     question_des: "哈哈哈这是啥是不是啥看看看看看看看?",
-    //     answer_data: [
-    //       {
-    //         answer_des: 4,
-    //         image_path: "../../images/img_no_select.png",
-    //       },
-    //       {
-    //         answer_des: 复古风格,
-    //         image_path: "../../images/img_no_select.png",
-    //       },
-    //       {
-    //         answer_des: 的热,
-    //         image_path: "../../images/img_no_select.png",
-    //       },
-    //       {
-    //         answer_des: 的惹人,
-    //         image_path: "../../images/img_no_select.png",
-    //       },
-    //       {
-    //         answer_des: 二二二,
-    //         image_path: "../../images/img_no_select.png",
-    //       }
-    //     ]
-    //   },
-    //  ],
+    question_data: [
+      {
+        question_des: "非公募集基金应当向合格投资者募集，合格投资者累计不得超过多少人?",
+        answer_data: [{
+          answer_des: 1,
+          image_path: "../../images/img_no_select.png",
+        },
+        {
+          answer_des: 2,
+          image_path: "../../images/img_no_select.png",
+        },
+        {
+          answer_des: 3,
+          image_path: "../../images/img_no_select.png",
+        }]
+      },
+      {
+        question_des: "份和份好多好多话好多好多好多好多好多话",
+        answer_data: [{
+          answer_des: 1,
+          image_path: "../../images/img_no_select.png",
+        },
+        {
+          answer_des: 2,
+          image_path: "../../images/img_no_select.png",
+        },
+        {
+          answer_des: 3,
+          image_path: "../../images/img_no_select.png",
+        }]
+      },
+      {
+        question_des: "份和滴滴答答滴滴答答好多话",
+        answer_data: [{
+          answer_des: "大家地方哈哈",
+          image_path: "../../images/img_no_select.png",
+        },
+        {
+          answer_des: "dddd",
+          image_path: "../../images/img_no_select.png",
+        },
+        {
+          answer_des: "绝对绝对绝对绝对家",
+          image_path: "../../images/img_no_select.png",
+        }]
+      }
+    ],
 
-    array: [{
-      answer_des: 1,
-      image_path: "../../images/img_no_select.png",
-    },
-    {
-      answer_des: 2,
-      image_path: "../../images/img_no_select.png",
-    },
-    {
-      answer_des: 3,
-      image_path: "../../images/img_no_select.png",
-    },
-    {
-      answer_des: 4,
-      image_path: "../../images/img_no_select.png",
-    },
-    {
-      answer_des: 5,
-      image_path: "../../images/img_no_select.png",
-    }],
+    question_des: "非公募集基金应当向合格投资者募集，合格投资者累计不得超过多少人?",
+    current_question: 1,
+    count_question: 1,
+    answer_percent: 0,
+    array: [],
 
   },
 
@@ -98,6 +79,14 @@ Page({
       complete: function (res) { },
     })
     console.log(this.data.winHeight)
+
+    this.setData({
+      question_des: this.data.question_data[this.data.current_question - 1].question_des,
+      array: this.data.question_data[this.data.current_question - 1].answer_data,
+      count_question: this.data.question_data[this.data.current_question - 1].answer_data.length,
+      answer_percent: this.data.current_question / this.data.count_question * 100,
+    })
+
   },
 
   /**
@@ -168,16 +157,35 @@ Page({
 
   },
   /**
-   * 上一题
-   */
+  * 上一题
+  */
   previousQuestion: function (res) {
 
+    this.setData({
+      current_question: this.data.current_question - 1,
+      question_des: this.data.question_data[this.data.current_question - 1].question_des,
+      array: this.data.question_data[this.data.current_question - 1].answer_data,
+      count_question: this.data.question_data[this.data.current_question - 1].answer_data.length,
+      answer_percent: this.data.current_question / this.data.count_question * 100,
+    })
   },
 
   /**
    * 下一题
    */
   nextQuestion: function (res) {
-
+    var current = this.data.current_question + 1;
+    if (current > this.data.count_question) {
+      current = this.data.count_question;
+    } else {
+      this.setData({
+        current_question: current,
+        question_des: this.data.question_data[this.data.current_question - 1].question_des,
+        array: this.data.question_data[this.data.current_question - 1].answer_data,
+        count_question: this.data.question_data[this.data.current_question - 1].answer_data.length,
+        answer_percent: this.data.current_question / this.data.count_question * 100,
+      })
+    }
   }
+
 })

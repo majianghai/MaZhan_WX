@@ -7,6 +7,7 @@
 }
 
 .question {
+  width: 80%;
   background: #fff;
   border-radius: 8px 8px 8px 8px;
   box-shadow: 0px 2px 6px #ff6e4a;

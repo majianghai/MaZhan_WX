@@ -1,14 +1,15 @@
 <view class="base" style="height:{{winHeight}}px">
-  <!-- 题 -->
+  <!-- 答题的进度 -->
   <view class="question">
     <view class='question_number'>
-      <view class='question_current'>1</view>
-      <view class='question_count'>/6</view>
+      <view class='question_current'>{{current_question}}</view>
+      <view class='question_count'>/{{count_question}}</view>
     </view>
-    <progress activeColor='#ff6843' backgroundColor='#999999' percent='20' stroke-width='3' style='margin-top:20px'></progress>
-
-    <view class='quetion_title'>非公募集基金应当向合格投资者募集，合格投资者累计不得超过多少人?</view>
-
+    <!-- 答题进度条 -->
+    <progress activeColor='#ff6843' backgroundColor='#999999' percent='{{answer_percent}}' stroke-width='3' style='margin-top:20px'></progress>
+    <!-- 问题描述 -->
+    <view class='quetion_title'>{{question_des}}</view>
+    <!-- 问题的选项 -->
     <view class='answer' wx:for="{{array}}" bindtap='getAnswer' id='{{index}}'>
       <image class='answer_status' src='{{item.image_path}}'></image>
       <view>{{item.answer_des}}</view>
@@ -25,5 +26,4 @@
       <image style='width:20px;height:12px;margin-left:16px' src='../../images/next.png'></image>
     </view>
   </view>
-
 </view>
