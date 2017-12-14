@@ -17,12 +17,12 @@
   <!-- 按钮 -->
   <view class='index_button'>
     <view class='index_button_item' bindtap='previousQuestion'>
-      <image style='width:20px;height:12px;margin-right:16px' src='../../images/previous.png'></image>
+      <image style='width:20px;height:12px;margin-right:16px' src='上一题.png'></image>
       <view>上一题</view>
     </view>
     <view class='index_button_item' bindtap='nextQuestion'>
       <view>下一题</view>
-      <image style='width:20px;height:12px;margin-left:16px' src='../../images/next.png'></image>
+      <image style='width:20px;height:12px;margin-left:16px' src='下一题.png'></image>
     </view>
   </view>
 

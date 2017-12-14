@@ -62,23 +62,23 @@ Page({
 
     array: [{
       answer_des: 1,
-      image_path: "../../images/img_no_select.png",
+      image_path: "未选中.png",
     },
     {
       answer_des: 2,
-      image_path: "../../images/img_no_select.png",
+      image_path: "未选中.png",
     },
     {
       answer_des: 3,
-      image_path: "../../images/img_no_select.png",
+      image_path: "未选中.png",
     },
     {
       answer_des: 4,
-      image_path: "../../images/img_no_select.png",
+      image_path: "未选中.png",
     },
     {
       answer_des: 5,
-      image_path: "../../images/img_no_select.png",
+      image_path: "未选中.png",
     }],
 
   },
@@ -157,9 +157,9 @@ Page({
     var current_answer_id = res.currentTarget.id;
 
     for (var i = 0; i < this.data.array.length; i++) {
-      this.data.array[i].image_path = "../../images/img_no_select.png";
+      this.data.array[i].image_path = "未选中.png";
       if (i == current_answer_id) {
-        this.data.array[i].image_path = "../../images/img_select.png";
+        this.data.array[i].image_path = "选中.png";
       }
     }
     this.setData({
