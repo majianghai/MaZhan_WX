@@ -1,4 +1,3 @@
-// pages/clothes/clothes.js
 
 Page({
 
@@ -13,45 +12,45 @@ Page({
         question_des: "非公募集基金应当向合格投资者募集，合格投资者累计不得超过多少人?",
         answer_data: [{
           answer_des: 1,
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         },
         {
           answer_des: 2,
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         },
         {
           answer_des: 3,
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         }]
       },
       {
         question_des: "份和份好多好多话好多好多好多好多好多话",
         answer_data: [{
           answer_des: 1,
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         },
         {
           answer_des: 2,
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         },
         {
           answer_des: 3,
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         }]
       },
       {
         question_des: "份和滴滴答答滴滴答答好多话",
         answer_data: [{
           answer_des: "大家地方哈哈",
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         },
         {
           answer_des: "dddd",
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         },
         {
           answer_des: "绝对绝对绝对绝对家",
-          image_path: "../../images/img_no_select.png",
+          image_path: "image_no_select.png",
         }]
       }
     ],
@@ -79,13 +78,14 @@ Page({
       complete: function (res) { },
     })
     console.log(this.data.winHeight)
-
+    var count = this.data.question_data[this.data.current_question - 1].answer_data.length;
     this.setData({
       question_des: this.data.question_data[this.data.current_question - 1].question_des,
       array: this.data.question_data[this.data.current_question - 1].answer_data,
       count_question: this.data.question_data[this.data.current_question - 1].answer_data.length,
-      answer_percent: this.data.current_question / this.data.count_question * 100,
+      answer_percent: this.data.current_question / count * 100,
     })
+    console.log("answer_percent"+this.data.answer_percent)
 
   },
 
@@ -146,9 +146,9 @@ Page({
     var current_answer_id = res.currentTarget.id;
 
     for (var i = 0; i < this.data.array.length; i++) {
-      this.data.array[i].image_path = "../../images/img_no_select.png";
+      this.data.array[i].image_path = "image_no_select.png";
       if (i == current_answer_id) {
-        this.data.array[i].image_path = "../../images/img_select.png";
+        this.data.array[i].image_path = "image_select.png";
       }
     }
     this.setData({
@@ -161,12 +161,16 @@ Page({
   */
   previousQuestion: function (res) {
 
+    var current = this.data.current_question-1;
+    if(current<=0){
+      current = 0;
+    }
     this.setData({
-      current_question: this.data.current_question - 1,
-      question_des: this.data.question_data[this.data.current_question - 1].question_des,
-      array: this.data.question_data[this.data.current_question - 1].answer_data,
-      count_question: this.data.question_data[this.data.current_question - 1].answer_data.length,
-      answer_percent: this.data.current_question / this.data.count_question * 100,
+      current_question: current,
+      question_des: this.data.question_data[current - 1].question_des,
+      array: this.data.question_data[current - 1].answer_data,
+      count_question: this.data.question_data[current - 1].answer_data.length,
+      answer_percent: current / this.data.count_question * 100,
     })
   },
 
@@ -180,10 +184,10 @@ Page({
     } else {
       this.setData({
         current_question: current,
-        question_des: this.data.question_data[this.data.current_question - 1].question_des,
-        array: this.data.question_data[this.data.current_question - 1].answer_data,
-        count_question: this.data.question_data[this.data.current_question - 1].answer_data.length,
-        answer_percent: this.data.current_question / this.data.count_question * 100,
+        question_des: this.data.question_data[current - 1].question_des,
+        array: this.data.question_data[current - 1].answer_data,
+        count_question: this.data.question_data[current - 1].answer_data.length,
+        answer_percent: current / this.data.count_question * 100,
       })
     }
   }
