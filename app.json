@@ -3,12 +3,14 @@
     "pages/home/home",
     "pages/logs/logs",
     "pages/moreClass/moreClass",
-    "pages/exam/exam"        
+    "pages/exam/exam",
+    "pages/startExam/startExam",
+    "pages/result/result"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ff6843",
     "navigationBarTitleText": "我的课程测试",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   }
 }

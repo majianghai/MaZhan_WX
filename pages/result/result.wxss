@@ -1,0 +1,162 @@
+
+.container{
+  width: 90%;
+  height: 1150rpx;
+  margin-left: 5%;
+  background-color: white;
+  margin-top: 10pt;
+  border-radius: 10pt;
+  position: absolute;
+}
+
+.imgHeader{
+  width: 610rpx;
+  height: 414rpx;
+  position: absolute;
+  top: 0;
+}
+
+.scoreView{
+    position: absolute;
+    color: white;
+    font-size: 36rpx;
+}
+
+.txtScore{
+  font-size: 96rpx;
+}
+
+.beyondView{
+  width: 100%;
+  position: absolute;
+  margin-top: 210rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.txtBeyond{
+  color: #ff5e3d;
+}
+
+.line{
+  width: 90%;
+  height: 1rpx;
+  background-color: #e6e6e6;
+  margin-top: 270rpx;
+}
+
+
+.bottomView{
+  width: 90%;
+  height: 600rpx;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 280rpx;
+}
+
+.txt1{
+  color: #666666;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  display: block;
+  text-align: center;
+}
+
+.txt2{
+  color: #ff5e3d;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  display: block;
+  text-align: center;
+}
+
+.txt3{
+  color: #666666;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  display: block;
+  text-align: center;
+}
+
+.couponView{
+  margin-top: 50rpx;
+  height: 230rpx;
+  position: relative;
+}
+
+.imgCoupon{
+  width: 610rpx;
+  height: 180rpx;
+}
+
+.txtCoupon{
+  color: #ff5d3e;
+  font-size: 48rpx;
+  position: absolute;
+  left: 180rpx;
+  top: 50rpx;
+}
+
+.btnView{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+.obtainBtn{
+  width: 260rpx;
+  height: 100rpx;
+  border-width: 2rpx;
+  background: white;
+  border-style: solid;
+  border-radius: 50rpx;
+  color: #ff5d3e;
+  font-size: 16px;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doubleBtn{
+  width: 400rpx;
+  height: 100rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 110, 74, 1)), to(rgba(255, 85, 55, 1)));
+  border-radius: 25pt;
+  box-shadow: 0px 2px 6px #ffa08c;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.detailView {
+  width: 100%;
+  height: 100rpx;
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+}
+
+.txtDetail {
+  color: #ff5d3e;
+  font-size: 36rpx;
+  margin-right: 5px;
+}
+
+
+
+
+
+
+

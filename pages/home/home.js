@@ -1,6 +1,5 @@
 // pages/food/food.js
 
-
 Page({
 
   /**
@@ -10,7 +9,7 @@ Page({
 
     winHeight: 0,
     data: [1, 2],
-    show_whitch: 1,//0显示分数，1显示未测试
+    show_whitch: 0,//0显示分数，1显示未测试
   },
 
   /**
@@ -81,7 +80,7 @@ Page({
 
   startExam : function () {
     wx.navigateTo({
-      url: '../exam/exam'
+      url: '../result/result'
     })
   },
 

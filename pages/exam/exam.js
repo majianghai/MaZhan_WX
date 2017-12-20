@@ -181,6 +181,7 @@ Page({
     var current = this.data.current_question + 1;
     if (current > this.data.count_question) {
       current = this.data.count_question;
+      this.result();
     } else {
       this.setData({
         current_question: current,
@@ -190,6 +191,12 @@ Page({
         answer_percent: current / this.data.count_question * 100,
       })
     }
-  }
+  },
 
+  // 跳转结果页
+  result: function () {
+    wx.navigateTo({
+      url: '../result/result'
+    })
+  }
 })
