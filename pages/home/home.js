@@ -1,5 +1,5 @@
-// pages/food/food.js
 
+const service = require("../service/service.js");
 
 Page({
 
@@ -9,7 +9,7 @@ Page({
   data: {
 
     winHeight: 0,
-    data: [1, 2],
+    data: [],
     show_whitch: 1,//0显示分数，1显示未测试
   },
 
@@ -28,6 +28,22 @@ Page({
       }
     });
     console.log(this.data.winHeight)
+
+    wx.getUserInfo({
+      success:function(res){
+        console.log(res)
+      }
+    })
+
+    var that = this;
+    var url = "index.php/subject/sublist";
+    var parameters = ""
+    service.request(url, parameters, function (res) {
+      console.log("请求成功");
+      that.setData({
+        data: res.data.data,
+      })
+    })
   },
 
   /**
@@ -79,9 +95,17 @@ Page({
 
   },
 
+  // 开始测试
   startExam : function () {
     wx.navigateTo({
       url: '../exam/exam'
+    })
+  },
+  
+  // 查看已领优惠券
+  seeCoupon:function(){
+    wx.navigateTo({
+      url: '../result/result'
     })
   },
 
@@ -92,9 +116,4 @@ Page({
       url: '../moreClass/moreClass'
     })
   }  ,
-   goShare:function(){
-     wx.navigateTo({
-       url: '../../pages/share/share?course=' + this.data.data,
-     })
-   }
 })
