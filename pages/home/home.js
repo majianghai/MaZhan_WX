@@ -91,5 +91,10 @@ Page({
     wx.navigateTo({
       url: '../moreClass/moreClass'
     })
-  }  
+  }  ,
+   goShare:function(){
+     wx.navigateTo({
+       url: '../../pages/share/share?course=' + this.data.data,
+     })
+   }
 })

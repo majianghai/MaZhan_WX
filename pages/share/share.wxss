@@ -1,0 +1,135 @@
+.base {
+  background: #ff6843;
+  padding: 30rpx 30rpx 30rpx 30rpx;
+}
+
+.bg_white {
+  border-radius: 16rpx 16rpx 16rpx 16rpx;
+  background: #fff;
+  padding: 0rpx 40rpx 40rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg_header{
+  position: absolute;
+  width:610rpx;
+  height:260rpx;
+  top: 40rpx;
+}
+
+.header_img{
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  width: 220rpx;
+  height: 220rpx;
+  margin-top: 40rpx;
+  top: 40rpx;
+}
+
+.name{
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: bold;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.text_normal{
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.line{
+  width: 100%;
+  height: 2rpx;
+  background: #e6e6e6;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.course_name{
+  color: #ff5d3e;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.detail{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.detail_text{
+  color: #ff5d3e;
+  font-size: 28rpx;
+  margin-right: 12rpx;
+}
+.detail_img{
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.coupon_img{
+  width: 610rpx;
+  height:180rpx;
+  margin-top: 50rpx;
+}
+
+.coupon_num{
+  position: relative;
+  color: #ff5d3e;
+  font-size: 48rpx;
+  top: -118rpx;  
+}
+
+.get_coupon{
+  width: 360rpx;
+  height: 100rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 110, 74, 1)), to(rgba(255, 85, 55, 1)));
+  border-top-left-radius: 64rpx;
+  border-top-right-radius: 64rpx;
+  border-bottom-left-radius: 64rpx;
+  border-bottom-right-radius: 64rpx;
+  box-shadow: 0rpx 4rpx 14rpx #ffa08c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 40rpx;
+}
+
+.person_list_base{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.person_list_img{
+  border-radius: 50%;
+  width: 88rpx;
+  height: 88rpx;
+  margin-right: 18rpx;
+}
+.person_list_text{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.person_list_name{
+  color: #333333;
+  font-size: 32rpx;
+  margin-bottom: 16rpx;
+}
+
+.person_list_des{
+  color: #666666;
+  font-size: 24rpx;
+}

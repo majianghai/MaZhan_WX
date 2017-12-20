@@ -1,0 +1,46 @@
+<!-- 橘子色的背景 -->
+<view class='base'>
+  <!-- 白色背景 -->
+  <view class='bg_white'>
+    <!-- 头部 前面的这个view就是用来占位置的-->
+    <view style='width:100%rpx;height:260rpx;margin-top:40rpx'></view>
+    <image class="bg_header" src='bg_header.png'></image>
+    <image class='header_img' src="{{user_img}}"></image>
+
+    <!-- 用户名字 -->
+    <view class='name'>{{user_name}}</view>
+
+    <view class='text_normal'>当了回学霸 分你奖学金</view>
+    <!-- 分割线 -->
+    <view class='line'></view>
+    <view class='text_normal' style='margin-bottom:10pt'>邀请你来学习理财高阶课</view>
+    <!-- 课程名字 -->
+    <view class='course_name'>《{{course_name}}》</view>
+    <!-- 课程详情 -->
+    <view class='detail' bindtap='courseDetail'>
+      <view class='detail_text'>课程详情</view>
+      <image class='detail_img' src='detail.png'></image>
+    </view>
+    <!-- 优惠券 -->
+
+    <image class='coupon_img' src='coupon.png' mode='scaleToFill'></image>
+    <view class='coupon_num'>{{coupon_num}}元奖学金</view>
+
+    <view class='get_coupon' bindtap='getCoupon'>领取奖学金</view>
+
+    <view class='detail' style='margin-top:40rpx' bindtap='myCourse'>
+      <view class='detail_text'>查看有没有合适我的课程</view>
+      <image class='detail_img' src='detail.png'></image>
+    </view>
+    <view class='line' style='margin-top:40rpx'></view>
+    <view class='detail_text' style='margin-bottom:40rpx'>{{person_list.length}}人已领取</view>
+    <!-- 已领列表 -->
+    <view class='person_list_base' wx:for="{{person_list}}">
+      <image class='person_list_img' src="{{item.img_url}}"></image>
+      <view class='person_list_text'>
+        <view class='person_list_name'>{{item.name}}</view>
+        <view class='person_list_des'>占你的光，我也要当学霸</view>
+      </view>
+    </view>
+  </view>
+</view>

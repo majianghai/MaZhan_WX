@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/logs/logs",
     "pages/moreClass/moreClass",
-    "pages/exam/exam"        
+    "pages/exam/exam",
+    "pages/share/share"      
   ],
   "window":{
     "backgroundTextStyle":"light",

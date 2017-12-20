@@ -31,5 +31,6 @@
     <view class='text_bottom' bindtap="moreClass"> 查看更多的课程</view>
     <image style='width:13px;height:13px;' src='查看更多课程.png'></image>
   </view>
+  <view bindtap='goShare'>测试分享</view>
 
 </view>

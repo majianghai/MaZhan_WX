@@ -6,7 +6,7 @@
       <view class='question_count'>/{{count_question}}</view>
     </view>
     <!-- 答题进度条 -->
-    <progress activeColor='#ff6843' backgroundColor='#999999' percent='{{answer_percent}}' stroke-width='3' style='margin-top:20px'></progress>
+    <progress activeColor='#ff6843' backgroundColor='#999999' percent='{{answer_percent}}' stroke-width='3' style='margin-top:40rpx'></progress>
     <!-- 问题描述 -->
     <view class='quetion_title'>{{question_des}}</view>
     <!-- 问题的选项 -->
@@ -18,12 +18,12 @@
   <!-- 按钮 -->
   <view class='index_button'>
     <view class='index_button_item' bindtap='previousQuestion'>
-      <image style='width:20px;height:12px;margin-right:16px' src='privious.png'></image>
+      <image style='width:40rpx;height:24rpx;margin-right:32rpx' src='privious.png'></image>
       <view>上一题</view>
     </view>
     <view class='index_button_item' bindtap='nextQuestion'>
       <view>下一题</view>
-      <image style='width:20px;height:12px;margin-left:16px' src='next.png'></image>
+      <image style='width:40rpx;height:24rpx;margin-left:32rpx' src='next.png'></image>
     </view>
   </view>
 </view>
