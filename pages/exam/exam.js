@@ -1,61 +1,15 @@
 
+const service = require("../service/service.js");
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    winHeight: 0,
-
-    question_data: [
-      {
-        question_des: "非公募集基金应当向合格投资者募集，合格投资者累计不得超过多少人?",
-        answer_data: [{
-          answer_des: 1,
-          image_path: "image_no_select.png",
-        },
-        {
-          answer_des: 2,
-          image_path: "image_no_select.png",
-        },
-        {
-          answer_des: 3,
-          image_path: "image_no_select.png",
-        }]
-      },
-      {
-        question_des: "份和份好多好多话好多好多好多好多好多话",
-        answer_data: [{
-          answer_des: 1,
-          image_path: "image_no_select.png",
-        },
-        {
-          answer_des: 2,
-          image_path: "image_no_select.png",
-        },
-        {
-          answer_des: 3,
-          image_path: "image_no_select.png",
-        }]
-      },
-      {
-        question_des: "份和滴滴答答滴滴答答好多话",
-        answer_data: [{
-          answer_des: "大家地方哈哈",
-          image_path: "image_no_select.png",
-        },
-        {
-          answer_des: "dddd",
-          image_path: "image_no_select.png",
-        },
-        {
-          answer_des: "绝对绝对绝对绝对家",
-          image_path: "image_no_select.png",
-        }]
-      }
-    ],
-
-    question_des: "非公募集基金应当向合格投资者募集，合格投资者累计不得超过多少人?",
+    winHeight: 0,  
+    question_data: [],
+    question_des: "",
     current_question: 1,
     count_question: 1,
     answer_percent: 0,
@@ -77,15 +31,45 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-    console.log(this.data.winHeight)
-    var count = this.data.question_data[this.data.current_question - 1].answer_data.length;
-    this.setData({
-      question_des: this.data.question_data[this.data.current_question - 1].question_des,
-      array: this.data.question_data[this.data.current_question - 1].answer_data,
-      count_question: this.data.question_data[this.data.current_question - 1].answer_data.length,
-      answer_percent: this.data.current_question / count * 100,
+
+    var that = this;
+    var url = "index.php/subject/exam";
+    var parameters = "subjectid=1";
+    service.request(url, parameters, function (res) {
+      console.log("请求成功");
+  
+      var request_data= res.data.data;
+    
+      var question_array = new Array;
+      for (var i = 0; i < request_data.length;i++){
+        
+        var answer_arary = [];
+        for(var j = 0;j<request_data[i].answer.length;j++){
+          var answer = new Object({
+            answer_des: request_data[i].answer[j] ,
+            image_path: "image_no_select.png",
+          })
+          answer_arary.push(answer);
+        }
+        var question = new Object({
+          question_des:request_data[i].question,
+          answer_data:answer_arary,
+        })
+
+        question_array.push(question)
+      }
+      that.setData({
+        question_data: question_array,
+      })
+
+      var count = that.data.question_data[that.data.current_question - 1].answer_data.length;
+      that.setData({
+        question_des: that.data.question_data[that.data.current_question - 1].question_des,
+        array: that.data.question_data[that.data.current_question - 1].answer_data,
+        count_question: that.data.question_data[that.data.current_question - 1].answer_data.length,
+        answer_percent: that.data.current_question / count * 100,
+      })
     })
-    console.log("answer_percent"+this.data.answer_percent)
 
   },
 
@@ -163,7 +147,7 @@ Page({
 
     var current = this.data.current_question-1;
     if(current<=0){
-      current = 0;
+      current = 1;
     }
     this.setData({
       current_question: current,

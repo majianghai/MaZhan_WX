@@ -10,7 +10,7 @@ Page({
 
     winHeight: 0,
     data: [],
-    show_whitch: 1,//0显示分数，1显示未测试
+    openid:"",
   },
 
   /**
@@ -27,17 +27,34 @@ Page({
         })
       }
     });
-    console.log(this.data.winHeight)
-
-    wx.getUserInfo({
-      success:function(res){
+    // 获取openid
+    wx.login({
+      success: function (res) {
         console.log(res)
-      }
-    })
+        if (res.code) {
+          //发起网络请求
+          var url = "index.php/subject/openid";
+          var parameters = 'code='+res.code;
+          service.request(url, parameters, function (res) {
+            console.log("请求成功");
+            that.setData({
+              openid: res.data.data,
+            })
 
-    var that = this;
+            wx.setStorage({
+              key: 'openid',
+              data: that.data.openid,
+            })
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    });
+
+    //获取所有课程列表
     var url = "index.php/subject/sublist";
-    var parameters = ""
+    var parameters = "openid="+that.data.openid;
     service.request(url, parameters, function (res) {
       console.log("请求成功");
       that.setData({
@@ -96,9 +113,10 @@ Page({
   },
 
   // 开始测试
-  startExam : function () {
+  startExam : function (res) {
+    console.log(res)
     wx.navigateTo({
-      url: '../exam/exam'
+      url: '../exam/exam?exam_id=1'
     })
   },
   

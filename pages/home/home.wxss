@@ -5,6 +5,7 @@
   /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(12, 205, 137, 0.7))); */
   background-color: #ff6843;
   padding-top: 10rpx;
+  padding-bottom: 30rpx;
 }
 
 .item {
