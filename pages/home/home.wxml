@@ -10,7 +10,7 @@
         
         <view class='content' hidden='{{item.is_answer==0?false:true}}'>
           <text class='text'>暂未测试</text>
-          <view class='test_at_once' bindtap='startExam' id='{{index}}'>立即测试</view>
+          <view class='test_at_once' bindtap='startExam' id='{{item.id}}'>立即测试</view>
         </view>
 
         <view class='content' hidden='{{item.is_answer==1?false:true}}'>

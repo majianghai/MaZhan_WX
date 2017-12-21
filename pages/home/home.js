@@ -28,29 +28,14 @@ Page({
       }
     });
     // 获取openid
-    wx.login({
-      success: function (res) {
-        console.log(res)
-        if (res.code) {
-          //发起网络请求
-          var url = "index.php/subject/openid";
-          var parameters = 'code='+res.code;
-          service.request(url, parameters, function (res) {
-            console.log("请求成功");
-            that.setData({
-              openid: res.data.data,
-            })
-
-            wx.setStorage({
-              key: 'openid',
-              data: that.data.openid,
-            })
-          })
-        } else {
-          console.log('获取用户登录态失败！' + res.errMsg)
-        }
-      }
-    });
+    wx.getStorage({
+      key: 'openid',
+      success: function(res) {
+        that.setData({
+          openid: res.data,
+        })
+      },
+    })
 
     //获取所有课程列表
     var url = "index.php/subject/sublist";
@@ -115,8 +100,9 @@ Page({
   // 开始测试
   startExam : function (res) {
     console.log(res)
+    console.log(res.currentTarget.id)
     wx.navigateTo({
-      url: '../exam/exam?exam_id=1'
+      url: '../exam/exam?course_examid=' + res.currentTarget.id
     })
   },
   
@@ -131,7 +117,7 @@ Page({
    moreClass: function (event) {
     console.log(event.target.dataset.img)
     wx.navigateTo({
-      url: '../moreClass/moreClass'
+      url: '../share/share'
     })
-  }  ,
+  },
 })
