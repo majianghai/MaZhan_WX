@@ -109,14 +109,14 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
   },
 
   // 开始测试
   startExam : function (res) {
     console.log(res)
     wx.navigateTo({
-      url: '../exam/exam?exam_id=1'
+      url: '../startExam/startExam?exam_id=1'
     })
   },
   

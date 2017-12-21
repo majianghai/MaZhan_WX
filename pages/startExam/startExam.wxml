@@ -1,25 +1,25 @@
 <view style='background:#ff6843;height:400pt'>
 
 
-  <image class='image' src="header.png" mode='aspectFit'></image>
+  <image class='image' src='{{data.detailurl}}' mode='aspectFit'></image>
 
   <view class='backView'>
     <!--题目  -->
     <view class='bottomView'>
       <view class='titleView'>
         <image class='imgTitle' src='start.png'></image>
-        <text class='txtTitle'>树立信心：为什么投资可以做到100%赚钱</text>
+        <text class='txtTitle'>{{data.names}}</text>
       </view>
 
       <!--题数和时间  -->
       <view class='questionView'>
-        <text class='txtCount'>共5题</text>
+        <text class='txtCount'>共{{data.count}}题</text>
         <text>约2分钟</text>
       </view>
 
       <!--参与测试人数  -->
       <view class='personView'>已有
-        <text class='txtPerson'>293</text>人参加
+        <text class='txtPerson'>{{data.takenum}}</text>人参加
       </view>
 
       <!--开始测试按钮  -->

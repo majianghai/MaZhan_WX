@@ -1,17 +1,38 @@
+
+const service = require("../service/service.js");
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    data: {},
+    openid: "",
+    exam_id:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("exam_id ======= " + options.exam_id);
+    this.requsetData(options.exam_id);
+    this.exam_id = options.exam_id;
+  },
 
+  requsetData: function (exam_id) {
+
+    var that = this;
+    var url = "index.php/subject/examcount";
+    var parameters = "subjectid=" + exam_id;
+    service.request(url, parameters, function (res) {
+      console.log("请求成功");
+      that.setData({
+        data: res.data.data
+      })
+    })
   },
 
   /**
@@ -66,7 +87,7 @@ Page({
   // 点击开始测试
   startExam: function () {
     wx.navigateTo({
-      url: '../exam/exam'
+      url: '../exam/exam?exam_id=' + this.exam_id
     })
   }
 })
