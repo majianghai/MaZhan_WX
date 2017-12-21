@@ -33,12 +33,12 @@
       <image class='detail_img' src='detail.png'></image>
     </view>
     <view class='line' style='margin-top:40rpx'></view>
-    <view class='detail_text' style='margin-bottom:40rpx'>{{person_list.length}}人已领取</view>
+    <view class='detail_text' style='margin-bottom:40rpx'>{{p_count}}人已领取</view>
     <!-- 已领列表 -->
     <view class='person_list_base' wx:for="{{person_list}}">
-      <image class='person_list_img' src="{{item.img_url}}"></image>
+      <image class='person_list_img' src="{{item.url}}"></image>
       <view class='person_list_text'>
-        <view class='person_list_name'>{{item.name}}</view>
+        <view class='person_list_name'>{{item.username}}</view>
         <view class='person_list_des'>占你的光，我也要当学霸</view>
       </view>
     </view>

@@ -17,16 +17,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("exam_id ======= " + options.exam_id);
-    this.requsetData(options.exam_id);
+
     this.exam_id = options.exam_id;
+
+    // 获取openid
+    var that = this;
+    wx.getStorage({
+      key: 'openid',
+      success: function (res) {
+        that.setData({
+          openid: res.data,
+        })
+        that.requsetData(that.exam_id)
+      },
+    })
+
   },
 
   requsetData: function (exam_id) {
 
     var that = this;
     var url = "index.php/subject/examcount";
-    var parameters = "subjectid=" + exam_id;
+
+    var parameters = "subjectid=" + exam_id + "&openid=" + that.data.openid;
     service.request(url, parameters, function (res) {
       console.log("请求成功");
       that.setData({

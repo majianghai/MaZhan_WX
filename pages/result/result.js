@@ -7,25 +7,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataList: []
+    data: {},
+    openid: "",
+    couser_id:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.requsetData();
+    this.couser_id = options.couser_id;
+
+    // 获取openid
+    var that = this;
+    wx.getStorage({
+      key: 'openid',
+      success: function (res) {
+        that.setData({
+          openid: res.data,
+        })
+
+        that.requsetData(that.couser_id);
+      },
+    })
+  
   },
 
-  requsetData: function() {
-    
+  requsetData: function (couser_id) {
+
     var that = this;
-    var url = "index.php/subject/sublist";
-    var parameters = ""
+    var url = "index.php/subject/result";
+    var parameters = "openid=" + that.data.openid + "&subjectid=" + couser_id;
+
     service.request(url, parameters, function(res){
       console.log("请求成功");
       that.setData({
-        dataList: res.data.data
+        data: res.data.data
       })
     })
   },
@@ -85,4 +102,36 @@ Page({
       url: '../exam/exam'
     })
   },
+
+  obtainBtnClick: function() {
+    var that = this;
+    var url = "index.php/subject/draw";
+    var parameters = "openid=" + that.data.openid + "&subjectid=" + that.couser_id + "&bonus=" + that.data.data.bonus;
+
+    console.log("-------parameters---" + parameters)
+
+    service.request(url, parameters, function (res) {
+      console.log("请求成功");
+      
+
+    })
+  },
+
+  doubleBtnClick: function () {
+    var that = this;
+    var url = "index.php/subject/draw";
+    var parameters = "openid=" + that.data.openid + "&subjectid=" + that.couser_id + "&bonus=" + that.data.data.bonus*2;
+
+    console.log("-------parameters---" + parameters)
+    service.request(url, parameters, function (res) {
+      
+      console.log("请求成功");
+
+    })
+
+  },
+
+  onShareAppMessage:function() {
+    
+  }
 })

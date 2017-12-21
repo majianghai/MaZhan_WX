@@ -56,11 +56,17 @@ function request(url, parameters = "", success, method = "GET", header = {}) {
       wx.hideToast();
       success(res);
     },
-    fail: function () {
+    fail: function (res) {
       // fail
+      wx.showToast({
+        title: "网络请求失败，请寻找后端人员",
+      })
     },
-    complete: function () {
+    complete: function (res) {
       // complete
+      // wx.showToast({
+      //   // title: "网络请求失败，请寻找后端人员",
+      // })
     }
   })
 }
