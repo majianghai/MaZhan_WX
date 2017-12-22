@@ -222,6 +222,9 @@ Page({
       wx.showToast({
         title: "parameters" + parameters,
       })
+      wx.showToast({
+        title: "res" + res.data.message,
+      })
       if(res.data.code == 100){
         wx.navigateTo({
           url: '../result/result?couser_id=' + couser_id

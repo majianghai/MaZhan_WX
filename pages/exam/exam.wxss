@@ -10,7 +10,7 @@
   width: 80%;
   background: #fff;
   border-radius: 16rpx 16rpx 16rpx 16rpx;
-  box-shadow: 0rpx 4rpx 12rpx #ff6e4a;
+  box-shadow: 0rpx 4rpx 14rpx #f9dbd3;
   margin-top: 30rpx;
   z-index: 999;
   flex-direction: column;
@@ -50,7 +50,8 @@
   margin-bottom: 30rpx;
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .answer_status{
@@ -65,7 +66,7 @@
   background: #fff;
   border-bottom-left-radius: 16rpx;
   border-bottom-right-radius: 16rpx;
-  box-shadow: 0 4rpx 6rpx #333;
+  box-shadow: 0 6rpx 16rpx #e04925;
   margin-left: 60rpx;
   margin-right: 60rpx;
   display: flex;

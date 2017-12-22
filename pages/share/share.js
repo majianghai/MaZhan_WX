@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user_name: "肉多多",
-    user_img: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJkOj8VUxLjDHEADYaFVlewvWIXiasNAqibSGXoC1RyR2M5FkfW4Cq4icnTV1PvOXQ6UWqSHU9zSXJMA/0",
+    user_name: "",
+    user_img: "",
     course_name: "清理资产，指定资产配置计划",
     coupon_num:"30",
     person_list: [],
@@ -20,6 +20,8 @@ Page({
    */
   onLoad: function (options) {
     
+    this.getInfo();
+
     wx.getStorage({
       key: 'openid',
       success: function(res) {
@@ -106,5 +108,41 @@ Page({
   // 领取奖学金
   getCoupon:function(){
 
+  },
+
+  getInfo:function(){
+    var that = this;
+    wx.getSetting({
+      success: function (res) {
+        console.log("授权" + JSON.stringify(res))
+        if (!res.authSetting['scope.userInfo']) {
+          wx.authorize({
+            scope: 'scope.userInfo',
+            success: function (res) {
+              console.log("授权chengggg" + JSON.stringify(res))
+              that.userinfo();
+            }
+          })
+        }else{
+          that.userinfo();
+        }
+      }
+    })
+  },
+
+  userinfo:function(){
+    // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+    var that = this;
+    wx.getUserInfo({
+      success: function (res) {
+        // 可以将 res 发送给后台解码出 unionId
+        console.log(res.userInfo)
+        that.setData({
+          user_name: res.userInfo.nickName,
+          user_img: res.userInfo.avatarUrl,
+        })
+        console.log("nickname" + that.data.user_name + ",url" + that.data.user_img)
+      }
+    })
   }
 })

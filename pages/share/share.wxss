@@ -94,7 +94,7 @@
   border-top-right-radius: 64rpx;
   border-bottom-left-radius: 64rpx;
   border-bottom-right-radius: 64rpx;
-  box-shadow: 0rpx 4rpx 14rpx #ffa08c;
+  box-shadow: 0rpx 8rpx 16rpx #ffa08c;
   display: flex;
   align-items: center;
   justify-content: center;

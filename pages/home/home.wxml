@@ -4,10 +4,10 @@
     <block wx:for="{{data}}">
       <view class='item'>
         <view class='title'>
-          <image class='image' src='课程名称.png'></image>
+          <image class='image' src='course_name.png'></image>
           <view class='course_name'>{{item.names}}</view>
         </view>
-        
+        <view style='height:1rpx;background:#e5e5e5'></view>
         <view class='content' hidden='{{item.is_answer==0?false:true}}'>
           <text class='text'>暂未测试</text>
           <view class='test_at_once' bindtap='startExam' id='{{item.id}}'>立即测试</view>
@@ -20,10 +20,11 @@
           </view>
           <view class='row_style ' bindtap="seeCoupon" id='{{item.id}}'>
             <view style='margin-right: 5px;font-size:14px;color: #ff5d3e;'>查看已领到的优惠券</view>
-            <image class='img_go' src='箭头.png'></image>
+            <image class='img_go' src='go.png'></image>
           </view>
         </view>
       </view>
     </block>
   </view>
+  <!-- <view bindtap='moreClass'>测试按钮</view> -->
 </view>
