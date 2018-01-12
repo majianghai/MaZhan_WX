@@ -1,0 +1,1 @@
+<view bindtap="goSelectGroup">跳转到选组合看估值</view>

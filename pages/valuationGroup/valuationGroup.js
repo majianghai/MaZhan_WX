@@ -1,11 +1,11 @@
-// pages/home/home.js
+// pages/valuationGroup/valuationGroup.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+  
   },
 
   /**
@@ -62,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  goSelectGroup:function() {
-    wx.navigateTo({
-      url: '../valuationGroup/valuationGroup'
-    })
   }
 })

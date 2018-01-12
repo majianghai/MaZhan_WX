@@ -2,8 +2,8 @@
   "pages":[
     "pages/home/home",
     "pages/logs/logs",
+    "pages/valuationGroup/valuationGroup",
     "pages/test/test"
-                
   ],
   "window":{
     "backgroundTextStyle":"light",
