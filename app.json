@@ -2,11 +2,8 @@
   "pages":[
     "pages/home/home",
     "pages/logs/logs",
-    "pages/moreClass/moreClass",
-    "pages/exam/exam",
-    "pages/share/share",      
-    "pages/startExam/startExam",
-    "pages/result/result"
+    "pages/test/test"
+                
   ],
   "window":{
     "backgroundTextStyle":"light",
